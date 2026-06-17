@@ -2,20 +2,20 @@
   "name": "Sudoku",
   "short_name": "Sudoku",
   "description": "Best puzzle game · Free forever",
-  "start_url": "./sudokunijubit.html",
+  "start_url": "/sudokunijubit.html",
   "display": "standalone",
   "background_color": "#0d1b2a",
   "theme_color": "#0d1b2a",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect x='10' y='10' width='172' height='172' rx='16' stroke='%234a7aaa' stroke-width='5' fill='%231a2d42'/%3E%3Cline x1='67' y1='10' x2='67' y2='182' stroke='%234a7aaa' stroke-width='3'/%3E%3Cline x1='125' y1='10' x2='125' y2='182' stroke='%234a7aaa' stroke-width='3'/%3E%3Cline x1='10' y1='67' x2='182' y2='67' stroke='%234a7aaa' stroke-width='3'/%3E%3Cline x1='10' y1='125' x2='182' y2='125' stroke='%234a7aaa' stroke-width='3'/%3E%3Ctext x='38' y='54' fill='%23c0392b' font-size='30' font-weight='bold'%3E5%3C/text%3E%3Ctext x='96' y='54' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E3%3C/text%3E%3Ctext x='154' y='54' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E.%3C/text%3E%3Ctext x='38' y='112' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E.%3C/text%3E%3Ctext x='96' y='112' fill='%23c0392b' font-size='30' font-weight='bold'%3E8%3C/text%3E%3Ctext x='154' y='112' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E1%3C/text%3E%3Ctext x='38' y='170' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E9%3C/text%3E%3Ctext x='96' y='170' fill='%23f0f6ff' font-size='30' font-weight='bold'%3E.%3C/text%3E%3Ctext x='154' y='170' fill='%23c0392b' font-size='30' font-weight='bold'%3E4%3C/text%3E%3C/svg%3E",
+      "src": "icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect x='26' y='26' width='460' height='460' rx='42' stroke='%234a7aaa' stroke-width='12' fill='%231a2d42'/%3E%3Cline x1='179' y1='26' x2='179' y2='486' stroke='%234a7aaa' stroke-width='8'/%3E%3Cline x1='333' y1='26' x2='333' y2='486' stroke='%234a7aaa' stroke-width='8'/%3E%3Cline x1='26' y1='179' x2='486' y2='179' stroke='%234a7aaa' stroke-width='8'/%3E%3Cline x1='26' y1='333' x2='486' y2='333' stroke='%234a7aaa' stroke-width='8'/%3E%3Ctext x='102' y='144' fill='%23c0392b' font-size='80' font-weight='bold'%3E5%3C/text%3E%3Ctext x='256' y='144' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E3%3C/text%3E%3Ctext x='410' y='144' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E.%3C/text%3E%3Ctext x='102' y='298' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E.%3C/text%3E%3Ctext x='256' y='298' fill='%23c0392b' font-size='80' font-weight='bold'%3E8%3C/text%3E%3Ctext x='410' y='298' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E1%3C/text%3E%3Ctext x='102' y='452' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E9%3C/text%3E%3Ctext x='256' y='452' fill='%23f0f6ff' font-size='80' font-weight='bold'%3E.%3C/text%3E%3Ctext x='410' y='452' fill='%23c0392b' font-size='80' font-weight='bold'%3E4%3C/text%3E%3C/svg%3E",
+      "src": "icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
