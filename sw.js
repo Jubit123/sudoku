@@ -1,6 +1,7 @@
-const CACHE_NAME = 'sudoku-v1';
+const CACHE_NAME = 'sudoku-v2';
 const ASSETS = [
-  '/sudokunijubit.html',
+  '/',
+  '/index.html',
   '/style.css',
   '/app.js',
   '/manifest.json',
@@ -16,6 +17,16 @@ self.addEventListener('install', (event) => {
   );
 });
 
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+      );
+    })
+  );
+});
+
 self.addEventListener('fetch', (event) => {
   // Try cache first, fall back to network. For navigation requests
   // (when the browser asks for a page) respond with the cached
@@ -26,7 +37,7 @@ self.addEventListener('fetch', (event) => {
       return fetch(event.request).catch(() => {
         // If the request is a navigation request, serve the app shell
         if (event.request.mode === 'navigate') {
-          return caches.match('/sudokunijubit.html');
+          return caches.match('/index.html');
         }
         return new Response('Offline', { status: 503, statusText: 'Offline' });
       });
