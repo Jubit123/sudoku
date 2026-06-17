@@ -2,7 +2,7 @@
   "name": "Sudoku",
   "short_name": "Sudoku",
   "description": "Best puzzle game · Free forever",
-  "start_url": "/sudokunijubit.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0d1b2a",
   "theme_color": "#0d1b2a",
