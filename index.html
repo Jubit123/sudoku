@@ -1,4 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sudoku</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sudoku">
+<meta name="theme-color" content="#0d1b2a">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='5' y='5' width='90' height='90' rx='8' stroke='%234a7aaa' stroke-width='3' fill='%231a2d42'/%3E%3Cline x1='35' y1='5' x2='35' y2='95' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='65' y1='5' x2='65' y2='95' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='5' y1='35' x2='95' y2='35' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='5' y1='65' x2='95' y2='65' stroke='%234a7aaa' stroke-width='2'/%3E%3Ctext x='20' y='28' fill='%23c0392b' font-size='16' font-weight='bold'%3E5%3C/text%3E%3Ctext x='50' y='28' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E3%3C/text%3E%3Ctext x='80' y='28' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='20' y='58' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='50' y='58' fill='%23c0392b' font-size='16' font-weight='bold'%3E8%3C/text%3E%3Ctext x='80' y='58' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E1%3C/text%3E%3Ctext x='20' y='88' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E9%3C/text%3E%3Ctext x='50' y='88' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='80' y='88' fill='%23c0392b' font-size='16' font-weight='bold'%3E4%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='5' y='5' width='90' height='90' rx='8' stroke='%234a7aaa' stroke-width='3' fill='%231a2d42'/%3E%3Cline x1='35' y1='5' x2='35' y2='95' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='65' y1='5' x2='65' y2='95' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='5' y1='35' x2='95' y2='35' stroke='%234a7aaa' stroke-width='2'/%3E%3Cline x1='5' y1='65' x2='95' y2='65' stroke='%234a7aaa' stroke-width='2'/%3E%3Ctext x='20' y='28' fill='%23c0392b' font-size='16' font-weight='bold'%3E5%3C/text%3E%3Ctext x='50' y='28' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E3%3C/text%3E%3Ctext x='80' y='28' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='20' y='58' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='50' y='58' fill='%23c0392b' font-size='16' font-weight='bold'%3E8%3C/text%3E%3Ctext x='80' y='58' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E1%3C/text%3E%3Ctext x='20' y='88' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E9%3C/text%3E%3Ctext x='50' y='88' fill='%23f0f6ff' font-size='16' font-weight='bold'%3E.%3C/text%3E%3Ctext x='80' y='88' fill='%23c0392b' font-size='16' font-weight='bold'%3E4%3C/text%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
@@ -196,6 +207,8 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
 @keyframes toastWiggle{0%,100%{transform:translate(-50%,0) rotate(0)}25%{transform:translate(-50%,0) rotate(-2deg)}75%{transform:translate(-50%,0) rotate(2deg)}}
 @keyframes toastGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 </style>
+</head>
+<body>
 
 <div id="splash" class="screen active">
   <div class="tile-bg" id="tile-bg"></div>
@@ -822,3 +835,5 @@ document.getElementById('hs-overlay').addEventListener('click',function(e){if(e.
   });
 })();
 </script>
+</body>
+</html>
