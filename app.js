@@ -503,13 +503,13 @@ function checkWin() {
   document.getElementById('wm').textContent=mistakes;
   document.getElementById('wh').textContent=hUsed;
   document.getElementById('win-msg').textContent=mistakes===0?'Perfect — no mistakes!':mistakes<=2?'Well played!':'Solved it!';
-  checkAndSaveScore(diff,elapsed,mistakes).then(isNew=>{
-    if(isNew) {
-      const b=document.getElementById('newbest-banner');
-      b.classList.add('show');
-      setTimeout(()=>b.classList.remove('show'),3000);
-    }
-  });
+  // Save score and show new best banner if applicable
+  const isNew = checkAndSaveScore(diff, elapsed, mistakes);
+  if (isNew) {
+    const b = document.getElementById('newbest-banner');
+    b.classList.add('show');
+    setTimeout(() => b.classList.remove('show'), 3000);
+  }
   setTimeout(()=>document.getElementById('win-wrap').classList.add('show'),1100);
   return true;
 }
@@ -535,48 +535,58 @@ document.addEventListener('visibilitychange', () => {
 });
 window.addEventListener('pagehide', () => { if (!over) saveGame(); });
 
-// ── High Score System ─────────────────────────────────────────────────────────
-async function loadHS() {
+// ── High Score System (localStorage — works fully offline) ────────────────────
+const HS_KEY = 'sudoku-hs';
+
+function loadHS() {
   try {
-    const r=await window.storage.get('sudoku-hs');
-    return r ? JSON.parse(r.value) : {};
+    const raw = localStorage.getItem(HS_KEY);
+    return raw ? JSON.parse(raw) : {};
   } catch(e) { return {}; }
 }
-async function saveHS(scores) {
-  try { await window.storage.set('sudoku-hs',JSON.stringify(scores)); } catch(e) {}
+
+function saveHS(scores) {
+  try {
+    localStorage.setItem(HS_KEY, JSON.stringify(scores));
+  } catch(e) {}
 }
-async function checkAndSaveScore(d,time,mist) {
-  const scores=await loadHS();
-  const prev=scores[d];
-  let isNew=false;
-  if(!prev||time<prev.time||(time===prev.time&&mist<prev.mistakes)) {
-    scores[d]={time,mistakes:mist};
-    await saveHS(scores);
-    isNew=true;
+
+// Returns true if this is a new personal best
+function checkAndSaveScore(d, time, mist) {
+  const scores = loadHS();
+  const prev = scores[d];
+  let isNew = false;
+  if (!prev || time < prev.time || (time === prev.time && mist < prev.mistakes)) {
+    scores[d] = { time, mistakes: mist };
+    saveHS(scores);
+    isNew = true;
   }
   return isNew;
 }
+
 function fmtTime(s) { const m=0|s/60,r=s%60; return m+':'+(r<10?'0':'')+r; }
-async function showHS() {
-  const scores=await loadHS();
-  const diffs=['easy','medium','hard','expert'];
-  const tb=document.getElementById('hs-body');
-  tb.innerHTML='';
-  diffs.forEach(d=>{
-    const tr=document.createElement('tr');
-    const s=scores[d];
-    if(s) {
-      tr.innerHTML=`<td>${d.charAt(0).toUpperCase()+d.slice(1)}</td><td class="val">${fmtTime(s.time)}</td><td class="val">${s.mistakes}</td>`;
+
+function showHS() {
+  const scores = loadHS();
+  const diffs = ['easy','medium','hard','expert'];
+  const tb = document.getElementById('hs-body');
+  tb.innerHTML = '';
+  diffs.forEach(d => {
+    const tr = document.createElement('tr');
+    const s = scores[d];
+    if (s) {
+      tr.innerHTML = `<td>${d.charAt(0).toUpperCase()+d.slice(1)}</td><td class="val">${fmtTime(s.time)}</td><td class="val">${s.mistakes}</td>`;
     } else {
-      tr.className='no-score';
-      tr.innerHTML=`<td>${d.charAt(0).toUpperCase()+d.slice(1)}</td><td colspan="2">— no record yet</td>`;
+      tr.className = 'no-score';
+      tr.innerHTML = `<td>${d.charAt(0).toUpperCase()+d.slice(1)}</td><td colspan="2">— no record yet</td>`;
     }
     tb.appendChild(tr);
   });
   document.getElementById('hs-overlay').classList.add('show');
 }
+
 function hideHS() { document.getElementById('hs-overlay').classList.remove('show'); }
-document.getElementById('hs-overlay').addEventListener('click',function(e){if(e.target===this)hideHS();});
+document.getElementById('hs-overlay').addEventListener('click', function(e) { if(e.target===this) hideHS(); });
 
 // ── Splash tiles ──────────────────────────────────────────────────────────────
 (function makeTiles(){
