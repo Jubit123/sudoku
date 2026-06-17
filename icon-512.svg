@@ -15,19 +15,3 @@
   <text x="256" y="452" fill="#f0f6ff" font-size="80" font-weight="bold">.</text>
   <text x="410" y="452" fill="#c0392b" font-size="80" font-weight="bold">4</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect x="26" y="26" width="460" height="460" rx="42" stroke="#4a7aaa" stroke-width="12" fill="#1a2d42"/>
-  <line x1="179" y1="26" x2="179" y2="486" stroke="#4a7aaa" stroke-width="8"/>
-  <line x1="333" y1="26" x2="333" y2="486" stroke="#4a7aaa" stroke-width="8"/>
-  <line x1="26" y1="179" x2="486" y2="179" stroke="#4a7aaa" stroke-width="8"/>
-  <line x1="26" y1="333" x2="486" y2="333" stroke="#4a7aaa" stroke-width="8"/>
-  <text x="102" y="144" fill="#c0392b" font-size="80" font-weight="bold">5</text>
-  <text x="256" y="144" fill="#f0f6ff" font-size="80" font-weight="bold">3</text>
-  <text x="410" y="144" fill="#f0f6ff" font-size="80" font-weight="bold">.</text>
-  <text x="102" y="298" fill="#f0f6ff" font-size="80" font-weight="bold">.</text>
-  <text x="256" y="298" fill="#c0392b" font-size="80" font-weight="bold">8</text>
-  <text x="410" y="298" fill="#f0f6ff" font-size="80" font-weight="bold">1</text>
-  <text x="102" y="452" fill="#f0f6ff" font-size="80" font-weight="bold">9</text>
-  <text x="256" y="452" fill="#f0f6ff" font-size="80" font-weight="bold">.</text>
-  <text x="410" y="452" fill="#c0392b" font-size="80" font-weight="bold">4</text>
-</svg>
